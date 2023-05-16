@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Full Name</title>
+    <style>
+      body {
+        background-image: url('/static/image.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      form {
+        width: 400px;
+        margin: 100px auto;
+        text-align: center;
+        background-color: whitesmoke;
+        padding: 30px;
+        border-radius: 10px;
+      }
+      label {
+        font-size: 20px;
+        display: block;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        font-size: 20px;
+        padding: 10px;
+        width: 60%;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+      }
+      input[type="submit"] {
+        font-size: 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: navy;
+        color: white;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/" method="post">
+      <label for="user_name">Enter your full name:</label>
+      <input type="text" id="user_name" name="user_name">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

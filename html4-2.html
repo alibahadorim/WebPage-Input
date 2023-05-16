@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>Color Picker</title>
+    <style>
+      form {
+        width: 300px;
+        margin: auto;
+        text-align: center;
+      }
+      
+      label {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      
+      select, input[type="text"] {
+        padding: 10px;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+      }
+      
+      input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        background-color: lightblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      #selected_color {
+        width: 200px;
+        height: 200px;
+        margin: 20px auto;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" method="post">
+      <label for="color">Choose a color:</label>
+      <select id="color" name="color">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="custom">Custom</option>
+      </select>
+      <br><br>
+      <div id="custom_color" style="display:none">
+        <label for="custom_color">Enter custom color in RGB format (e.g. 255,0,0):</label>
+        <input type="text" id="custom_color_input" name="custom_color">
+      </div>
+      <br><br>
+      <input type="submit" value="Update">
+    </form>
+    <div id="selected_color"></div>
+    <script>
+      document.getElementById("color").onchange = function() {
+        if (this.value === "custom") {
+          document.getElementById("custom_color").style.display = "block";
+        } else {
+          document.getElementById("custom_color").style.display = "none";
+          document.getElementById("selected_color").style.backgroundColor = this.value;
+        }
+      };
+    </script>
+  </body>
+</html>
